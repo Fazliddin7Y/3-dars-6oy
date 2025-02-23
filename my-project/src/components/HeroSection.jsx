@@ -4,6 +4,7 @@ import "./HeroSection.css";
 
 const HeroSection = () => {
   return (
+    
     <section className="hero">
       <div className="hero-text">
         <h1>BOL'SHOY GAMBURGER</h1>
