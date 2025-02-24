@@ -1,20 +1,15 @@
-import React, { useState } from "react";
-import "./Navbar.css";
+// src/components/Navbar.jsx
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <nav className="navbar">
-      <div className="logo">STREET88</div>
-      <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
-        ☰
-      </div>
-      <div className={`nav-links ${isOpen ? "open" : ""}`}>
-        <a href="#">Menyu</a>
-        <a href="#">O‘nas</a>
-        <a href="#">Kontakt</a>
-      </div>
+    <nav className="nav">
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/about">Menu</NavLink>
+      <NavLink to="/about/todos">Todos</NavLink>
+      <NavLink to="/about/comments">Comments</NavLink>
+      <NavLink to="/about/posts">Posts</NavLink>
     </nav>
   );
 };

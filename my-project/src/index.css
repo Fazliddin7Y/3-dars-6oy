@@ -244,3 +244,23 @@ body {
   margin-bottom: 10px;
 }
 
+.page {
+  padding: 20px;
+  color: white;
+  background-color: black;
+  min-height: 100vh;
+}
+
+.page h2 {
+  color: green;
+}
+
+.page ul {
+  list-style: none;
+  padding: 0;
+}
+
+.page ul li {
+  padding: 10px;
+  border-bottom: 1px solid green;
+}
