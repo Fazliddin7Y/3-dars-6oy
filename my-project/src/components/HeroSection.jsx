@@ -3,17 +3,16 @@ import "./HeroSection.css";
 
 const HeroSection = () => {
   return (
-    
-    <section className="hero">
+    <div className="hero-container">
       <div className="hero-text">
         <h1>BOL'SHOY GAMBURGER</h1>
-        <p>GOVYADINA</p>
-        <button className="order-btn">14 500</button>
+        <p className="subtitle">GO'VYADINA</p>
+        <button className="price-btn">14 500</button>
       </div>
       <div className="hero-image">
-        <img src="./imgs/burger.png" alt="Burger" />
+        <img src="https://source.unsplash.com/400x300/?burger" alt="Burger" />
       </div>
-    </section>
+    </div>
   );
 };
 

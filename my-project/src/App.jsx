@@ -1,29 +1,35 @@
-// src/App.jsx
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, NavLink, useLocation } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Todos from "./pages/Todos";
-import Comments from "./pages/Comments";
-import Posts from "./pages/Posts";
-import axios from "axios";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
+import { ThemeProvider } from "./context/ThemeContext";
+import Navbar from "./components/Navbar";
+import HeroSection from "./components/HeroSection";
+import { LangProvider } from "./context/LangContext";
+import Cards from "./components/Cards"; 
 
 function App() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios.get("https://fakestoreapi.com/products?limit=20")
-      .then((response) => setProducts(response.data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
-
   return (
-    <Router>
-      <AppContent products={products} />
-    </Router>
+    <ThemeProvider>
+      <LangProvider>
+        <Router>
+          <Navbar />
+          <HeroSection />
+          <Cards /> {/* FakeStore API-dan mahsulotlar chiqadi */}
+          <Routes>
+            {/* <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/about/todos" element={<Todos />} />
+            <Route path="/about/comments" element={<Comments />} />
+            <Route path="/about/posts" element={<Posts />} /> */}
+          </Routes>
+        </Router>
+      </LangProvider>
+    </ThemeProvider>
   );
 }
+
+
+
 
 function AppContent({ products }) {
   const location = useLocation();

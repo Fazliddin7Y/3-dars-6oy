@@ -1,62 +1,46 @@
-.navbar {
+.nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: black;
-  padding: 15px 20px;
-  color: green;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.menu-toggle {
-  background: none;
-  border: none;
-  color: green;
-  cursor: pointer;
-  display: none;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: green;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-.nav-links li a:hover {
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #222;
   color: white;
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: black;
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
 }
 
+.nav .buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav button {
+  padding: 5px 10px;
+  border: none;
+  background: green;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.nav button:hover {
+  background: darkgreen;
+}
+
+body.light {
+  background: white;
+  color: black;
+}
+
+body.dark {
+  background: black;
+  color: white;
+}
+
+.nav.dark {
+  background: black;
+}
